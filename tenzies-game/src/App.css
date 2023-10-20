@@ -1,4 +1,126 @@
-* {
+*{
+  box-sizing: border-box;
+
+}
+body{
+  margin: 70px 0;
+  background-color: #0B2434;
+  padding: 20px;
+  font-family: 'Karla',sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  /* margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 30px;
+  background-color: rgb(19, 32, 52);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+ }
+
+
+main{
+  max-width: 800px;
+  height: 500px;
+  background-color: #e3e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+/* header */
+.title{
+  text-align: center;
+}
+
+.instructions{
+  font-weight: 400;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.5;
+  margin-top: 0;
+
+} 
+/* header */
+
+.tenzie-box{
+  display: grid;
+  grid-template: auto auto / repeat(5,1fr);
+  grid-gap: 20px;
+  margin: 15px;
+}
+
+.die-face{
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+}
+
+
+.tenzie{
+  font-size: 1.8rem;
+}
+
+.roll-btn{
+  margin-top: 20px;
+  width: 120px;
+  height: 50px;
+  background-color: rgb(6, 103, 238);
+  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 4px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  
+}
+
+/* Held style */
+
+.hold{
+  background-color: greenyellow;
+}
+
+.won{
+  background-color: greenyellow;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* {
   box-sizing: border-box;
 }
 
@@ -74,3 +196,4 @@ main {
 .roll-dice:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
+*/
