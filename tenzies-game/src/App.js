@@ -17,10 +17,14 @@ export default function App(){
         
         if(allHeld && sameValue){
             setTenzies(true)
-            
             console.log("You won!")
         }
     },[dice])
+
+    function newGame(){
+        setTenzies(false)
+        setDice(allNewDice)
+    }
 
     function allNewDice(){
         const newDice = []
@@ -91,8 +95,8 @@ export default function App(){
 
         <button 
             className={tenzies?"roll-btn won":"roll-btn"} 
-            onClick={rollDice}>
-                {tenzies?"End Game":"Roll"}
+            onClick={tenzies?newGame:rollDice}>
+                {tenzies?"New Game":"Roll"}
         </button>
 
     </main>
