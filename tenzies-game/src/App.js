@@ -1,4 +1,115 @@
-import React from "react"
+import React from "react";
+import Die from "./Die";
+import "./App.css"
+import { nanoid } from 'nanoid'
+
+
+export default function App(){
+
+    const [dice, setDice] = React.useState(allNewDice())
+    const [tenzies, setTenzies] = React.useState(false)
+
+    React.useEffect(()=>{
+        console.log("state changed")
+    },[dice])
+
+    function allNewDice(){
+        const newDice = []
+        for(let i = 0; i < 10; i++){
+         newDice.push({
+           value: Math.ceil(Math.random()*6),
+           isHeld: false,
+           id: nanoid()
+        })
+        }
+        return newDice
+           
+     }
+
+    function rollDice(){
+        setDice(dice.map(die=>{
+            if(die.isHeld === false){
+                return {...die, 
+                    value:Math.ceil(Math.random()*6),
+                    id: nanoid()
+                }
+            } else {
+                return die
+            }
+        }))
+     }
+    
+    function holdDice(id){
+        const newDice = dice.map(die =>{
+            if(die.id === id){
+               return {...die, isHeld: !die.isHeld}
+            } else {
+                return die
+            }
+          
+        })
+        setDice(newDice)
+    }
+    function endGame(){
+       for(let i = 0; i < dice.length; i++){
+        if(dice[0].value === dice[i].value && dice[i].isHeld === true){
+            setTenzies(true)
+        }
+       }
+    }
+
+    const diceElements = dice.map(die =>{
+        return <Die 
+        key = {die.id} 
+        value={die.value} 
+        isHeld = {die.isHeld} 
+        holdDice = {()=> holdDice(die.id)}
+        />
+    })
+     
+
+  
+  return (
+    <main>
+      
+        <h1 className="title">Tenzies</h1>
+        <p className="instructions">Roll until all dice are the same.<br/>
+        Click each die to freeze it at its current value between rolls.</p> 
+
+        <div className="tenzie-box">
+        {diceElements}
+        </div>
+
+        <button 
+            className={tenzies?"roll-btn won":"roll-btn"} 
+            onClick={tenzies === false ? rollDice : endGame}>
+                {tenzies?"End Game":"Roll"}
+        </button>
+
+    </main>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React from "react"
 import Die from "./Die"
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
@@ -37,7 +148,7 @@ export default function App() {
 /**
  * Challenge: Allow the user to play a new game when the
  * button is clicked and they've already won
- */
+ 
     
     function rollDice() {
         if(!tenzies) {
@@ -88,4 +199,4 @@ export default function App() {
     )
 }
 
-
+*/
