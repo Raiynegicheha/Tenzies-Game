@@ -10,14 +10,14 @@ export default function App(){
     const [tenzies, setTenzies] = React.useState(false)
 
     React.useEffect(()=>{
-        
-        const value = dice[0].value
 
         dice.map(oldDice => {oldDice.map(die => {
+            
             if(value === die.value){
                 setTenzies(true)
             }
-        })})
+        }) 
+    })
     },[dice])
 
     function allNewDice(){
