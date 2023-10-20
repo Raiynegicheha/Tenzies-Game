@@ -10,7 +10,9 @@ export default function App(){
     const [tenzies, setTenzies] = React.useState(false)
 
     React.useEffect(()=>{
-        console.log("state changed")
+        dice.map(oldDice => {
+            if(oldDice[0].value === )
+        })
     },[dice])
 
     function allNewDice(){
@@ -50,13 +52,13 @@ export default function App(){
         })
         setDice(newDice)
     }
-    function endGame(){
-       for(let i = 0; i < dice.length; i++){
-        if(dice[0].value === dice[i].value && dice[i].isHeld === true){
-            setTenzies(true)
-        }
-       }
-    }
+    // function endGame(){
+    //    for(let i = 0; i < dice.length; i++){
+    //     if(dice[0].value === dice[i].value && dice[i].isHeld === true){
+    //         setTenzies(true)
+    //     }
+    //    }
+    // }
 
     const diceElements = dice.map(die =>{
         return <Die 
