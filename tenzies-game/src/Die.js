@@ -1,4 +1,23 @@
-import React from "react"
+import React from "react";
+import "./App.css"
+
+
+export default function Die(props){
+    return (
+        <div className={props.isHeld? "die-face hold" : "die-face"} onClick={props.holdDice}>
+            <h2 className="tenzie">{props.value}</h2>
+
+        </div>
+            
+    )
+}
+
+
+
+
+
+
+/*import React from "react"
 
 export default function Die(props) {
     const styles = {
@@ -14,3 +33,4 @@ export default function Die(props) {
         </div>
     )
 }
+*/
