@@ -10,9 +10,14 @@ export default function App(){
     const [tenzies, setTenzies] = React.useState(false)
 
     React.useEffect(()=>{
-        dice.map(oldDice => {
-            if(oldDice[0].value === )
-        })
+        
+        const value = dice[0].value
+
+        dice.map(oldDice => {oldDice.map(die => {
+            if(value === die.value){
+                setTenzies(true)
+            }
+        })})
     },[dice])
 
     function allNewDice(){
@@ -84,7 +89,7 @@ export default function App(){
 
         <button 
             className={tenzies?"roll-btn won":"roll-btn"} 
-            onClick={tenzies === false ? rollDice : endGame}>
+            onClick={rollDice}>
                 {tenzies?"End Game":"Roll"}
         </button>
 
