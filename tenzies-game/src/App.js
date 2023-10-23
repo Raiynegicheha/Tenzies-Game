@@ -114,7 +114,7 @@ export default function App(){
 
         <div>
             <p> RollCount {rollCount} </p>
-            <p></p>
+            <p> Best Score </p>
         </div>
         
 
